@@ -10,7 +10,6 @@ observability = { enabled = true }
 assets = { binding = "ASSETS", directory = "./dist/client", not_found_handling = "single-page-application" }
 
 [env.production]
-name = "viennaflow-landingpage-prod"
 routes = [
     { pattern = "viennaflow.at", custom_domain = true }
 ]
@@ -18,6 +17,6 @@ routes = [
 [env.preview]
 name = "viennaflow-landingpage-preview"
 routes = []
-preview_urls = true
+workers_dev = true
 
 
