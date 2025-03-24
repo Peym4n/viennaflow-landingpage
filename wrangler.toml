@@ -12,4 +12,4 @@ routes = [
 ]
 
 # Assets configuration if needed:
-assets = { binding = "ASSETS", not_found_handling = "single-page-application" }
+assets = { binding = "ASSETS", directory = "./dist/client", not_found_handling = "single-page-application" }
