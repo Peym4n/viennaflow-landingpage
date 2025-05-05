@@ -24,7 +24,7 @@ export const translations: Translations = {
       text3: "Easily track live metro movements across the city. Get real-time updates, smarter routes, and smoother commutes."
     },
     newsletter: {
-      heading: "Get The Latest ViennaFlow Updates",
+      heading: "Get the Latest ViennaFlow Updates",
       subheading: "And be the first to know when our project launches!",
       placeholder: "Enter your Email address",
       button: "Subscribe",
@@ -33,8 +33,7 @@ export const translations: Translations = {
     footer: {
       columns: [
         { heading: "Privacy&Policy", items: ["Privacy Policy", "Terms of Service", "Customer Support"] },
-        { heading: "Feature", items: ["Support center", "Customer Support", "About us"] },
-        { heading: "Contacts", items: ["Support center", "Customer Support", "About us"] }
+        { heading: "Contact", items: ["Support center", "Customer Support", "About us"] }
       ],
       copyright: "&copy; 2025 ViennaFlow. All Rights Reserved."
     }
