@@ -453,7 +453,7 @@ img::selection {
 }
 
 .footerSection {
-    background-image: url('images/foot.png');
+    background-image: url('images/finalfoot.jpg');
     background-size: cover;
     z-index: 1;
     padding: 120px 0;
@@ -480,6 +480,7 @@ img::selection {
 
 .footer-extender {
     margin-top: -210px;
+    vertical-align: top;
 }
 
 .contact-container__email-bg {
@@ -568,10 +569,6 @@ img::selection {
     #testimonials {
         margin-top: -90px;
         font-size: 150%;
-    }
-
-    .footer-extender {
-        display: none;
     }
 }
 
