@@ -1,16 +1,19 @@
 // src/App.tsx
-import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Landing from "./pages/Landing";
+import Landing from "./Landing";
+import "./App.css";
 
+// function App() {
+//   return (
+//     <Router>
+//       <Routes>
+//         <Route path="/" element={<Landing />} />
+//       </Routes>
+//     </Router>
+//   );
+// }
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-      </Routes>
-    </Router>
-  );
+  return <Landing />;
 }
 
 export default App;
