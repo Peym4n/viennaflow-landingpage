@@ -1,7 +1,3 @@
-body {
-    font-family: 'Poppins', sans-serif;
-}
-
 h1::selection,
 h2::selection,
 h3::selection,
@@ -31,6 +27,7 @@ img::selection {
 
 .header .header__logo {
     max-width: 130px;
+    margin-right: 0.5rem;
 }
 
 .nav-link {
@@ -210,6 +207,17 @@ img::selection {
 /* Change hamburger button color to black when navbar changes */
 .header-scrolled .mobile-nav-toggle>span {
     background: #000;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.5px;
+    transition: color 0.2s;
+}
+.logo-text--scrolled {
+    color: #333;
 }
 
 .mobile-nav-toggle--span {

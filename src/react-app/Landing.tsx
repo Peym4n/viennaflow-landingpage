@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import HamburgerMenu from './HamburgerMenu.tsx';
 import { translations } from './translations';
 import { Language } from './types';
-import logoBlack from './assets/images/logoblack.png';
-import logoWhite from './assets/images/logowhite.png';
 
 // import Slider from 'react-slick';
 
@@ -13,18 +11,16 @@ const ViennaFlowPage: React.FC = () => {
   const t = translations[lang];
 
   // Change header on scroll (logo & style)
+  const [headerScrolled, setHeaderScrolled] = useState(false);
   useEffect(() => {
     const onScroll = () => {
       const header = document.getElementById('header');
-      const headerImg = document.getElementById('headerImg') as HTMLImageElement | null;
       if (window.scrollY > 100) {
         header?.classList.add('header-scrolled');
-        Array.from(header?.getElementsByTagName('a') || []).forEach(a => a.classList.add('nav-link-dark'));
-        if (headerImg) headerImg.src = logoBlack;
+        setHeaderScrolled(true);
       } else {
         header?.classList.remove('header-scrolled');
-        Array.from(header?.getElementsByTagName('a') || []).forEach(a => a.classList.remove('nav-link-dark'));
-        if (headerImg) headerImg.src = logoWhite;
+        setHeaderScrolled(false);
       }
     };
     window.addEventListener('scroll', onScroll);
@@ -45,8 +41,17 @@ const ViennaFlowPage: React.FC = () => {
         <div className="container position-relative">
           <div className="d-flex justify-content-between align-items-center w-100">
             {/* Logo */}
-            <div className="logo">
-              <a className="navbar-brand" href="#"><img id="headerImg" className="img-fluid navbar-brand header__logo" src={logoWhite} alt="" /></a>
+            <div className="logo d-flex align-items-center">
+              <a className="navbar-brand d-flex align-items-center" href="#">
+                <img
+                  id="headerImg"
+                  className="img-fluid header__logo"
+                  src="/web-app-manifest-192x192.png"
+                  alt="ViennaFlow logo"
+                  style={{ width: 40, height: 40 }}
+                />
+                <span className={`logo-text ms-2${headerScrolled ? ' logo-text--scrolled' : ''}`}>ViennaFlow</span>
+              </a>
             </div>
             
             {/* Desktop Nav */}
