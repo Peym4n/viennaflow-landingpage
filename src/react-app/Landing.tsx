@@ -219,7 +219,7 @@ const ViennaFlowPage: React.FC = () => {
             <div className="container">
                 <div className="row justify-content-center gap-4 text-center text-md-left">
                     <div className="footer-column col-12 col-md-4 col-lg-2">
-                        <a href="#" className="heading-big text-white">Privacy Policy</a>
+                    <Link to="/privacypolicy" className="heading-big text-white">Privacy Policy</Link>
                         
 
                     </div>

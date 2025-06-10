@@ -1,0 +1,50 @@
+/* Gesamter Abschnitt */
+#impressum {
+    background-color: #f2f2f2;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+  
+  /* Container-Styling */
+  #impressum .container {
+    max-width: 800px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+  }
+  
+  /* Zurück-Button */
+  #impressum .btn {
+    font-weight: 500;
+  }
+  
+  /* Abschnittsüberschrift */
+  #impressum h2 {
+    text-align: center;
+    font-size: 2rem;
+  }
+  
+  /* Links */
+  #impressum a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  #impressum a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Hinweis-Text */
+  #impressum .fst-italic {
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  /* Optional: Logo zentriert einbauen */
+  #impressum .fh-logo {
+    display: block;
+    margin: 2rem auto 1rem;
+    max-width: 220px;
+  }
+  
