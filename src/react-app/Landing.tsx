@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import HamburgerMenu from './HamburgerMenu.tsx';
 import { translations } from './translations';
 import { Language } from './types';
+import { Link } from 'react-router-dom';
+
 
 // import Slider from 'react-slick';
 
@@ -218,9 +220,11 @@ const ViennaFlowPage: React.FC = () => {
                 <div className="row justify-content-center gap-4 text-center text-md-left">
                     <div className="footer-column col-12 col-md-4 col-lg-2">
                         <a href="#" className="heading-big text-white">Privacy Policy</a>
+                        
+
                     </div>
                     <div className="footer-column col-12 col-md-4 col-lg-2">
-                        <a href="#" className="heading-big text-white">Term of Service</a>
+                      <Link to="/impressum" className="heading-big text-white">Impressum</Link>
                     </div>
                 </div>
             </div>
