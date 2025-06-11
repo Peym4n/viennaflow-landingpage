@@ -1,12 +1,9 @@
 import React from 'react';
-import './Impressum.css';
-import fhLogo from './assets/images/fhtw_logo_fuer_signatur.png';
+import './imprint.css';
 
-
-
-const Impressum: React.FC = () => {
+const Imprint: React.FC = () => {
   return (
-    <section id="impressum" className="d-flex align-items-center justify-content-center">
+    <section id="imprint" className="d-flex align-items-center justify-content-center">
       <div className="container text-dark py-5">
         {/* Zurück-Button */}
         <div className="mb-4">
@@ -21,28 +18,27 @@ const Impressum: React.FC = () => {
 
         <h2 className="mb-4">Imprint</h2>
 
-        <p><strong>Company:</strong> ViennaFlow</p>
-        <p><strong>Address:</strong> Höchststädtplatz 1, 1200 Vienna, Austria</p>
+        <p><strong>Media Owner and Publisher:</strong> ViennaFlow</p>
         <p><strong>Contact Person:</strong> Peyman Aparviz</p>
+        <p><strong>Address:</strong> Höchstädtplatz 6, 1200 Vienna, Austria</p>
         <p>
           <strong>Email:</strong>{' '}
           <a href="mailto:info@viennaflow.at">info@viennaflow.at</a>
         </p>
+        <p>
+          <strong>Website:</strong>{' '}
+          <a href="https://viennaflow.at">viennaflow.at</a>
+        </p>
 
         {/* Hinweis zum Projektursprung */}
         <p className="mt-4 fst-italic">
-          This project was developed in the context of a university course at <strong>Fachhochschule Technikum Wien</strong>.
+          This is a non-commercial website created as part of a student project at the <strong>UAS Technikum Wien</strong>, Department of Computer Science.
         </p>
 
-        {/* Optional: FH-Logo */}
-        <img
-          src={fhLogo}
-          alt="Fachhochschule Technikum Wien Logo"
-          className="fh-logo"
-        />
+        <p><strong>Content Responsibility (according to § 24 Austrian Media Act):</strong> Peyman Aparviz</p>
       </div>
     </section>
   );
 };
 
-export default Impressum;
+export default Imprint;

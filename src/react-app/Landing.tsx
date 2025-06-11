@@ -218,13 +218,13 @@ const ViennaFlowPage: React.FC = () => {
         <div className="container page-map text-white">
             <div className="container">
                 <div className="row justify-content-center gap-4 text-center text-md-left">
-                    <div className="footer-column col-12 col-md-4 col-lg-2">
-                    <Link to="/privacypolicy" className="heading-big text-white">Privacy Policy</Link>
+                    <div className="footer-column col-12 col-md-4 col-lg-2 text-right">
+                    <Link to="/privacypolicy" className="heading-big text-white ">Privacy Policy</Link>
                         
 
                     </div>
                     <div className="footer-column col-12 col-md-4 col-lg-2">
-                      <Link to="/impressum" className="heading-big text-white">Impressum</Link>
+                      <Link to="/imprint" className="heading-big text-white">Imprint</Link>
                     </div>
                 </div>
             </div>

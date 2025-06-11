@@ -30,7 +30,7 @@ const PrivacyPolicy: React.FC = () => {
         <p>
           The data controller is:<br />
           <strong>ViennaFlow</strong><br />
-          Höchststädtplatz 1, 1200 Vienna, Austria<br />
+          Höchstädtplatz 6, 1200 Vienna, Austria<br />
           Email: <a href="mailto:info@viennaflow.at">info@viennaflow.at</a>
         </p>
 

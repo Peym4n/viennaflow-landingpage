@@ -1,7 +1,7 @@
 // src/App.tsx
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Landing from "./Landing";
-import Impressum from "./impressum";
+import Imprint from "./Imprint.tsx";
 import PrivacyPolicy from "./PrivacyPolicy";
 import "./App.css";
 
@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/impressum" element={<Impressum />} />
+        <Route path="/imprint" element={<Imprint />} />
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
       </Routes>
     </Router>
