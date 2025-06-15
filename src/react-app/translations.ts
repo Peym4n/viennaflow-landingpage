@@ -111,8 +111,8 @@ export const translations: Translations = {
     }
   },
   de: {
-    heading: "Intelligente Metro-Verfolgung für eine intelligentere Reise in Wien.",
-    paragraph: "Erhalten Sie Live-Metro-Updates, Ankunftszeiten und Routendetails sofort für eine nahtlose Reiseerfahrung.",
+    heading: "Intelligente U-Bahn-Verfolgung für eine intelligentere Reise in Wien.",
+    paragraph: "Erhalten Sie Live-U-Bahn-Updates, Ankunftszeiten und Routendetails sofort für eine nahtlose Reiseerfahrung.",
     button: "App starten",
     nav: {
       about: 'Über uns',
@@ -121,10 +121,10 @@ export const translations: Translations = {
       block: {
         text1: "Nahtlos, Intelligent, Effizient",
         text2: "Entfesseln Sie die Kraft von ViennaFlow",
-        text3: "Erleben Sie Echtzeit-Einblicke in die Metro mit ViennaFlow. Navigieren Sie mühelos durch die Stadt mit präzisem Tracking und zuverlässigen Informationen."
+        text3: "Erleben Sie Echtzeit-Einblicke in die U-Bahn mit ViennaFlow. Navigieren Sie mühelos durch die Stadt mit präzisem Tracking und zuverlässigen Informationen."
       },
       descriptions: [
-        { heading: "Live Metro Tracking", text: "Bleiben Sie mit Echtzeit-Zugstandorten auf einer interaktiven Karte auf dem Laufenden." },
+        { heading: "Live U-Bahn Tracking", text: "Bleiben Sie mit Echtzeit-Zugstandorten auf einer interaktiven Karte auf dem Laufenden." },
         { heading: "Find Nearby Stations", text: "Finden Sie die nächsten U-Bahn-Stationen sofort und problemlos." },
         { heading: "Reliable Arrival Times", text: "Erfahren Sie genau, wann Ihr Zug ankommt, mit präzisen Ankunftszeiten." },
         { heading: "Cross-Platform Accessibility", text: "Genießen Sie nahtlosen Zugriff auf Web- und mobilen Geräten." }
