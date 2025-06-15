@@ -16,7 +16,7 @@ function AnalyticsTracker() {
     if (IS_PRODUCTION && GA_MEASUREMENT_ID && !initialized) {
       ReactGA.initialize(GA_MEASUREMENT_ID);
       setInitialized(true);
-      console.log('Google Analytics initialized for production with ID:', GA_MEASUREMENT_ID);
+    //   console.log('Google Analytics initialized for production with ID:', GA_MEASUREMENT_ID);
     } else if (!IS_PRODUCTION) {
       console.log('Google Analytics disabled in development mode.');
     } else if (!GA_MEASUREMENT_ID) {
@@ -31,7 +31,7 @@ function AnalyticsTracker() {
         page: location.pathname + location.search + location.hash,
         title: document.title, // Optional: send document title
       });
-      console.log(`GA Pageview sent (production): ${location.pathname + location.search + location.hash}`);
+    //   console.log(`GA Pageview sent (production): ${location.pathname + location.search + location.hash}`);
     }
   }, [initialized, location]);
 

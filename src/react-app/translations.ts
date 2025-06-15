@@ -4,7 +4,7 @@ export const translations: Translations = {
   en: {
     heading: "Smart Metro Tracking for Smarter Travel in Vienna.",
     paragraph: "Get live metro updates, arrival times, and route details instantly, ensuring a seamless travel experience.",
-    button: "Learn More",
+    button: "Launch the App",
     nav: {
       about: 'About Us',
     },
@@ -113,7 +113,7 @@ export const translations: Translations = {
   de: {
     heading: "Intelligente Metro-Verfolgung für eine intelligentere Reise in Wien.",
     paragraph: "Erhalten Sie Live-Metro-Updates, Ankunftszeiten und Routendetails sofort für eine nahtlose Reiseerfahrung.",
-    button: "Mehr erfahren",
+    button: "App starten",
     nav: {
       about: 'Über uns',
     },
