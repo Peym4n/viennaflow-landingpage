@@ -11,7 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build App
-        run: npm install && npm run build
+        run: |
+          echo "VITE_GA_MEASUREMENT_ID=${{ secrets.VITE_GA_MEASUREMENT_ID }}" >> .env
+          npm install
+          npm run build
       - name: Deploy Worker
         uses: cloudflare/wrangler-action@v3
         with:
