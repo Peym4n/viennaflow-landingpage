@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import HamburgerMenu from './HamburgerMenu.tsx';
-import { translations } from './translations';
-import { Language } from './types';
+// import { translations } from './translations'; // No longer needed directly
+// import { Language } from './types'; // Language type will come from context or useLanguage hook
 import { Link } from 'react-router-dom';
+import { useLanguage } from './contexts/LanguageContext';
 
 
 // import Slider from 'react-slick';
 
 const ViennaFlowPage: React.FC = () => {
+  const { lang, setLang, t } = useLanguage(); // Use global language context
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  const [lang, setLang] = useState<Language>((localStorage.getItem('selectedLang') as Language) || 'en');
-  const t = translations[lang];
+  // const [lang, setLang] = useState<Language>((localStorage.getItem('selectedLang') as Language) || 'en'); // Local state removed
+  // const t = translations[lang]; // t comes from context
 
   // Change header on scroll (logo & style)
   const [headerScrolled, setHeaderScrolled] = useState(false);
@@ -31,9 +33,9 @@ const ViennaFlowPage: React.FC = () => {
 
 
   // Language Switch Handler
-  const handleLangSwitch = (lang: Language) => {
-    setLang(lang);
-    localStorage.setItem('selectedLang', lang);
+  const handleLangSwitch = (newLang: typeof lang) => { // typeof lang ensures we use the Language type from context
+    setLang(newLang); // setLang from context handles localStorage
+    // localStorage.setItem('selectedLang', lang); // Handled by LanguageProvider
   };
 
   return (
@@ -62,6 +64,7 @@ const ViennaFlowPage: React.FC = () => {
                 <ul className="navbar-nav">
                   <li className="nav-item px-2">
                     {/*<a className="nav-link" href="#contact">Contact</a>*/}
+                    <Link className="nav-link" to="/about">{t.nav?.about ?? 'About'}</Link>
                   </li>
                 </ul>
                 <div>
@@ -107,6 +110,9 @@ const ViennaFlowPage: React.FC = () => {
                 <ul className="navbar-nav mt-2 mb-5">
                   <li className="nav-item px-2">
                     {/*<a className="nav-link" href="#contact" onClick={() => setMobileNavOpen(false)}>Contact</a>*/}
+                  </li>
+                  <li className="nav-item px-2">
+                    <Link className="nav-link" to="/about" onClick={() => setMobileNavOpen(false)}>{t.nav?.about ?? 'About Us'}</Link>
                   </li>
                 </ul>
                 
@@ -219,18 +225,18 @@ const ViennaFlowPage: React.FC = () => {
             <div className="container">
                 <div className="row justify-content-center gap-4 text-center text-md-left">
                     <div className="footer-column col-12 col-md-4 col-lg-2 text-right">
-                    <Link to="/privacypolicy" className="heading-big text-white ">Privacy Policy</Link>
+                    <Link to="/privacypolicy" className="heading-big text-white ">{t.footer?.privacyLink ?? 'Privacy Policy'}</Link>
                         
 
                     </div>
                     <div className="footer-column col-12 col-md-4 col-lg-2">
-                      <Link to="/imprint" className="heading-big text-white">Imprint</Link>
+                      <Link to="/imprint" className="heading-big text-white">{t.footer?.imprintLink ?? 'Imprint'}</Link>
                     </div>
                 </div>
             </div>
             <div className="row">
                 <div className="col-12 text-center mt-4">
-                    <p id="footer-copyright" className="text-white">&copy; {new Date().getFullYear()} ViennaFlow. All Rights Reserved.</p>
+                    <p id="footer-copyright" className="text-white" dangerouslySetInnerHTML={{ __html: t.footer.copyright.replace('{year}', new Date().getFullYear().toString()) }}></p>
                 </div>                
             </div>
         </div>

@@ -10,15 +10,54 @@ export type Testimonial = {
 export type FeatureDescription = {
   heading: string;
   text: string;
-  img?: string;
-};
+  img?: string; // Optional image property
+}
 
 export type Language = 'en' | 'de';
+
+export type ImprintItem = {
+  label: string;
+  value: string; // Can contain simple text or HTML like <a> tags
+  isHtml?: boolean; // Optional flag if value is known to be HTML
+};
+
+export type ImprintPageTranslations = {
+  backButton: string;
+  heading: string;
+  items: ImprintItem[] | undefined;
+  projectNote?: string;
+}
+
+export interface AboutPageTranslations {
+  heading: string;
+  intro: string;
+  contributions?: {
+    [key: string]: string; // e.g., projectLeadFullStack: 'Project Lead & Full-Stack Development'
+  };
+  universities?: {
+    [key: string]: string; // e.g., uasTechnikumWien: 'UAS Technikum Wien'
+  };
+  // Potentially add teamMemberRoleHeader or similar if needed for table/list headers
+}
+
+export type PrivacyPageSection = {
+  title?: string; // Optional title for sections
+  content: string; // Allows HTML
+};
+
+export type PrivacyPageTranslations = {
+  backButton: string;
+  heading: string;
+  sections: PrivacyPageSection[];
+};
 
 export type Translations = {
   [lang in Language]: {
     heading: string;
     paragraph: string;
+    nav?: {
+      about?: string;
+    };
     button: string;
     feature: {
       block: {
@@ -43,6 +82,11 @@ export type Translations = {
     footer: {
       columns: { heading: string; items: string[] }[];
       copyright: string;
+      imprintLink?: string;
+      privacyLink?: string;
     };
+    imprintPage?: ImprintPageTranslations;
+    privacyPage?: PrivacyPageTranslations;
+    aboutPage?: AboutPageTranslations;
   };
 };
