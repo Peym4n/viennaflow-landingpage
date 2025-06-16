@@ -78,6 +78,11 @@ export type Translations = {
       placeholder: string;
       button: string;
       communityText: string;
+      validationError?: string;
+      successMessage?: string;
+      errorMessage?: string;
+      networkError?: string;
+      submittingButton?: string;
     };
     footer: {
       columns: { heading: string; items: string[] }[];

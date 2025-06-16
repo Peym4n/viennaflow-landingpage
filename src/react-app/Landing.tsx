@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import HamburgerMenu from './HamburgerMenu.tsx';
-// import { translations } from './translations'; // No longer needed directly
-// import { Language } from './types'; // Language type will come from context or useLanguage hook
 import { Link } from 'react-router-dom';
 import { useLanguage } from './contexts/LanguageContext';
 
@@ -11,8 +9,6 @@ import { useLanguage } from './contexts/LanguageContext';
 const ViennaFlowPage: React.FC = () => {
   const { lang, setLang, t } = useLanguage(); // Use global language context
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  // const [lang, setLang] = useState<Language>((localStorage.getItem('selectedLang') as Language) || 'en'); // Local state removed
-  // const t = translations[lang]; // t comes from context
 
   // Change header on scroll (logo & style)
   const [headerScrolled, setHeaderScrolled] = useState(false);
@@ -35,7 +31,48 @@ const ViennaFlowPage: React.FC = () => {
   // Language Switch Handler
   const handleLangSwitch = (newLang: typeof lang) => { // typeof lang ensures we use the Language type from context
     setLang(newLang); // setLang from context handles localStorage
-    // localStorage.setItem('selectedLang', lang); // Handled by LanguageProvider
+  };
+
+  // Newsletter subscription state and handler
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState('');
+
+  const handleSubscribe = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setStatus('submitting');
+    setMessage('');
+
+    if (!email) {
+      setStatus('error');
+      setMessage(t.newsletter?.validationError || 'Please enter a valid email address.');
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus('success');
+        setMessage(data.message || t.newsletter?.successMessage || 'A confirmation email has been sent. Please check your inbox to complete your subscription.');
+        setEmail(''); 
+      } else {
+        setStatus('error');
+        setMessage(data.message || t.newsletter?.errorMessage || 'Subscription failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('Subscription error:', error);
+      setStatus('error');
+      setMessage(t.newsletter?.networkError || 'A network error occurred. Please try again.');
+    }
   };
 
   return (
@@ -193,25 +230,45 @@ const ViennaFlowPage: React.FC = () => {
       </section>
 
       {/* Newsletter Section */}
+
+
       <section id="newsletter" className="newsletter">
         <div className="container">
           <div className="container contact-wrapper text-slate">
             <div className="row text-center mb-4 pt-5">
-              <h4 className="col-12 text-slate-dark heading-bigger mb-4">{t.newsletter.heading}</h4>
-              <p className="col-12 mb-sm-4 mb-md-4">{t.newsletter.subheading}</p>
+              <h4 className="col-12 text-slate-dark heading-bigger mb-4">{t.newsletter?.heading}</h4>
+              <p className="col-12 mb-sm-4 mb-md-4">{t.newsletter?.subheading}</p>
             </div>
             <div className="row justify-content-center">
-              <form action="" className="col-12 col-lg-7">
+              <form onSubmit={handleSubscribe} className="col-12 col-lg-7">
                 <div className="contact-container__email-bg">
-                  <input type="email" className="contact-container__email-input col-sm-12 col-lg-8 py-2 py-lg-4"
-                    placeholder={t.newsletter.placeholder} />
+                  <input
+                    type="email"
+                    className="contact-container__email-input col-sm-12 col-lg-8 py-2 py-lg-4"
+                    placeholder={t.newsletter?.placeholder}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    disabled={status === 'submitting'}
+                  />
                 </div>
-                <input type="submit" className="contact-container__submit col-12 col-lg-3 my-3 my-lg-0 py-lg-4"
-                  value={t.newsletter.button} />
+                <input
+                  type="submit"
+                  className="contact-container__submit col-12 col-lg-3 my-3 my-lg-0 py-lg-4"
+                  value={status === 'submitting' ? (t.newsletter?.submittingButton || 'Subscribing...') : t.newsletter?.button}
+                  disabled={status === 'submitting'}
+                />
               </form>
             </div>
+            {message && (
+              <div className="row justify-content-center text-center mt-3">
+                <p className={`col-12 col-lg-7 ${status === 'error' ? 'text-danger' : (status === 'success' ? 'text-success' : 'text-info')}`}>
+                  {message}
+                </p>
+              </div>
+            )}
             <div className="row text-center mt-lg-4 pb-5">
-              <p className="col-12 mb-sm-4 mb-md-4">{t.newsletter.communityText}</p>
+              <p className="col-12 mb-sm-4 mb-md-4">{t.newsletter?.communityText}</p>
             </div>
           </div>
         </div>

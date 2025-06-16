@@ -11,6 +11,11 @@ assets = { binding = "ASSETS", directory = "./dist/client", not_found_handling =
 
 routes = []
 
+[[kv_namespaces]]
+binding = "ZOHO_KV"
+id = "927447120d7c4158b0ee6e31b7615b62"
+preview_id = "927447120d7c4158b0ee6e31b7615b62"
+
 [env.production]
 routes = [
   { pattern = "viennaflow.at", custom_domain = true }

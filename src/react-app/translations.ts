@@ -31,7 +31,12 @@ export const translations: Translations = {
       subheading: "And be the first to know when our project launches!",
       placeholder: "Enter your Email address",
       button: "Subscribe",
-      communityText: "Become part of our ever growing community."
+      communityText: "Become part of our ever growing community.",
+      validationError: "Please enter a valid email address.",
+      successMessage: "A confirmation email has been sent. Please check your inbox to complete your subscription.",
+      errorMessage: "Subscription failed. Please try again later.",
+      networkError: "A network error occurred. Please check your connection and try again.",
+      submittingButton: "Subscribing..."
     },
     footer: {
       columns: [
@@ -140,7 +145,12 @@ export const translations: Translations = {
       subheading: "Und seien Sie der Erste, der von unserem Projektstart erfährt!",
       placeholder: "Geben Sie Ihre E-Mail-Adresse ein",
       button: "Nachricht senden",
-      communityText: "Werden Sie Teil unserer stetig wachsenden Community."
+      communityText: "Werden Sie Teil unserer stetig wachsenden Community.",
+      validationError: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      successMessage: "Eine Bestätigungs-E-Mail wurde gesendet. Bitte überprüfen Sie Ihren Posteingang, um Ihr Abonnement abzuschließen.",
+      errorMessage: "Abonnement fehlgeschlagen. Bitte versuchen Sie es später erneut.",
+      networkError: "Ein Netzwerkfehler ist aufgetreten. Bitte überprüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+      submittingButton: "Abonnieren..."
     },
     footer: {
       columns: [
