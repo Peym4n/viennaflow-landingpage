@@ -35,7 +35,8 @@ export const translations: Translations = {
       successMessage: "A confirmation email has been sent. Please check your inbox to complete your subscription.",
       errorMessage: "Subscription failed. Please try again later.",
       networkError: "A network error occurred. Please check your connection and try again.",
-      submittingButton: "Subscribing..."
+      submittingButton: "Subscribing...",
+      alreadySubscribed: "This email address is already subscribed!"
     },
     footer: {
       columns: [
@@ -148,7 +149,8 @@ export const translations: Translations = {
       successMessage: "Eine Bestätigungs-E-Mail wurde gesendet. Bitte überprüfen Sie Ihren Posteingang, um Ihr Abonnement abzuschließen.",
       errorMessage: "Abonnement fehlgeschlagen. Bitte versuchen Sie es später erneut.",
       networkError: "Ein Netzwerkfehler ist aufgetreten. Bitte überprüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
-      submittingButton: "Abonnieren..."
+      submittingButton: "Abonnieren...",
+      alreadySubscribed: "Diese E-Mail-Adresse ist bereits abonniert."
     },
     footer: {
       columns: [

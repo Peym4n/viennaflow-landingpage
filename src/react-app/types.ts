@@ -77,11 +77,12 @@ export type Translations = {
       subheading: string;
       placeholder: string;
       button: string;
-      validationError?: string;
-      successMessage?: string;
-      errorMessage?: string;
-      networkError?: string;
-      submittingButton?: string;
+      validationError: string;
+      successMessage: string;
+      errorMessage: string;
+      networkError: string;
+      submittingButton: string;
+      alreadySubscribed: string;
     };
     footer: {
       columns: { heading: string; items: string[] }[];

@@ -49,12 +49,7 @@ app.post("/api/subscribe", async (c) => {
 
     // Zoho API can return a code of "0" for both success and for contacts that already exist.
     if (zohoData.code === "0") {
-      if (zohoData.message && typeof zohoData.message === 'string' && zohoData.message.toLowerCase().includes("exists")) {
-        // Contact already exists, which we'll treat as a client-side error (but not a server failure).
-        console.log(`Contact already exists for email: ${email}`);
-        return c.json({ success: true, message: "This email address is already subscribed!" });
-      }
-      // Genuine success
+      // Genuine success (covers both new and existing contacts from Zoho's perspective)
       return c.json({ success: true, message: zohoData.message });
     }
 

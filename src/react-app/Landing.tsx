@@ -45,7 +45,7 @@ const ViennaFlowPage: React.FC = () => {
 
     if (!email) {
       setStatus('error');
-      setMessage(t.newsletter?.validationError || 'Please enter a valid email address.');
+      setMessage(t.newsletter.validationError);
       return;
     }
 
@@ -62,16 +62,21 @@ const ViennaFlowPage: React.FC = () => {
 
       if (data.success) {
         setStatus('success');
-        setMessage(data.message || t.newsletter?.successMessage || 'A confirmation email has been sent. Please check your inbox to complete your subscription.');
-        setEmail(''); 
+        // The backend now forwards Zoho's message. We check for "exists" to show the right message.
+        if (data.message && data.message.toLowerCase().includes('exists')) {
+          setMessage(t.newsletter.alreadySubscribed);
+        } else {
+          setMessage(t.newsletter.successMessage);
+        }
+        setEmail('');
       } else {
         setStatus('error');
-        setMessage(data.message || t.newsletter?.errorMessage || 'Subscription failed. Please try again.');
+        setMessage(data.message || t.newsletter.errorMessage);
       }
     } catch (error) {
       console.error('Subscription error:', error);
       setStatus('error');
-      setMessage(t.newsletter?.networkError || 'A network error occurred. Please try again.');
+      setMessage(t.newsletter.networkError);
     }
   };
 
@@ -255,7 +260,7 @@ const ViennaFlowPage: React.FC = () => {
                 <input
                   type="submit"
                   className="contact-container__submit col-12 col-lg-3 my-3 my-lg-0 py-lg-4"
-                  value={status === 'submitting' ? (t.newsletter?.submittingButton || 'Subscribing...') : t.newsletter?.button}
+                  value={status === 'submitting' ? t.newsletter.submittingButton : t.newsletter.button}
                   disabled={status === 'submitting'}
                 />
               </form>
