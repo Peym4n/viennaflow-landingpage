@@ -77,7 +77,6 @@ export type Translations = {
       subheading: string;
       placeholder: string;
       button: string;
-      communityText: string;
       validationError?: string;
       successMessage?: string;
       errorMessage?: string;

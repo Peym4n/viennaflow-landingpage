@@ -234,8 +234,8 @@ const ViennaFlowPage: React.FC = () => {
 
       <section id="newsletter" className="newsletter">
         <div className="container">
-          <div className="container contact-wrapper text-slate">
-            <div className="row text-center mb-4 pt-5">
+          <div className="container contact-wrapper text-slate py-3 py-lg-4">
+            <div className="row text-center mb-4">
               <h4 className="col-12 text-slate-dark heading-bigger mb-4">{t.newsletter?.heading}</h4>
               <p className="col-12 mb-sm-4 mb-md-4">{t.newsletter?.subheading}</p>
             </div>
@@ -267,9 +267,6 @@ const ViennaFlowPage: React.FC = () => {
                 </p>
               </div>
             )}
-            <div className="row text-center mt-lg-4 pb-5">
-              <p className="col-12 mb-sm-4 mb-md-4">{t.newsletter?.communityText}</p>
-            </div>
           </div>
         </div>
       </section>
