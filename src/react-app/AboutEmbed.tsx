@@ -7,9 +7,9 @@ const teamMembers = [
   { name: 'Peyman Aparviz', universityKey: 'uasTechnikumWien', contributionKey: 'projectLeadFullStack' },
   { name: 'Zeynep Tokel', universityKey: 'uasTechnikumWien', contributionKey: 'databaseDesignTesting' },
   { name: 'Ashour Merza', universityKey: 'uasTechnikumWien', contributionKey: 'backendDevelopment' },
-  { name: 'Student 4', universityKey: 'kmutnb', contributionKey: 'landingPageLogo' },
-  { name: 'Student 5', universityKey: 'kmutnb', contributionKey: 'landingPageDev' },
-  { name: 'Student 6', universityKey: 'kmutnb', contributionKey: 'uiUxDesign' },
+  { name: 'Vivien Therese Villalobos', universityKey: 'kmutnb', contributionKey: 'landingPageLogo' },
+  { name: 'Pongpisut Somsagun', universityKey: 'kmutnb', contributionKey: 'landingPageDev' },
+  { name: 'Pimwaran Parinyapornkul', universityKey: 'kmutnb', contributionKey: 'uiUxDesign' },
 ];
 
 const AboutEmbed: React.FC = () => {
