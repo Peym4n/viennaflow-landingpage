@@ -277,7 +277,7 @@ const ViennaFlowPage: React.FC = () => {
         <div className="container page-map text-white">
           <div className="container">
             <div className="row justify-content-center gap-4 text-center text-md-left">
-              <div className="footer-column col-12 col-md-4 col-lg-2 text-right">
+              <div className="footer-column col-12 col-md-4 col-lg-2 text-md-right">
                 <Link to="/privacypolicy" className="heading-big text-white ">{t.footer?.privacyLink ?? 'Privacy Policy'}</Link>
 
 
